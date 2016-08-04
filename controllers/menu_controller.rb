@@ -94,6 +94,7 @@ class MenuController
   def view_entry_by_number
       puts "To view entry, enter its number"
       selection = gets.chomp.to_i
+      selection -= 1
 
       if selection == @address_book.entries.include?(selection)
         puts @address_book.entries[selection]

@@ -96,7 +96,7 @@ class MenuController
       selection = gets.chomp.to_i
       selection -= 1
 
-      if s@address_book.entries[selection] != nil
+      if @address_book.entries[selection] != nil
         puts @address_book.entries[selection]
 
       else

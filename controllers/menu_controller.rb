@@ -96,8 +96,8 @@ class MenuController
       selection = gets.chomp.to_i
       selection -= 1
 
-      if selection == @address_book.entries.include?(selection)
-        puts @address_book.entries[selection]
+        if @address_book.entries[selection] != nil
+          puts @address_book.entries[selection]
 
       else
         "#{selection}" is not a valid entry

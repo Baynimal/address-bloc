@@ -148,7 +148,10 @@ RSpec.describe AddressBook do
     expect(entry).to be_nil
   end
 
-
-
+# #assignment for checkpoint
+#   it "imports the 2nd entry" do
+#         book.import_from_csv("entries.csv")
+#         check_entry(entry_two, "Bob", "555-555-5415", "bob@blocmail.com")
+#     end      
 
 end

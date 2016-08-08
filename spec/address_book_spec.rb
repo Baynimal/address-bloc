@@ -61,33 +61,31 @@ RSpec.describe AddressBook do
     it "imports the 1st entry" do
       book.import_from_csv("entries.csv")
       entry_one = book.entries[0]
-      check_entry(entry_one, "Ragnar", "253-333-4444", "ragnar@ragnar.com"  )
+      check_entry(entry_one, "Aethelred", "253-222-6666", "aethelred@aethelred.com"  )
     end
 
     it "imports the 2nd entry" do
       book.import_from_csv("entries.csv")
       entry_two = book.entries[1]
       check_entry(entry_two, "Alfred", "253-222-1111", "alfred@alfred.com"  )
-
     end
 
     it "imports the 3nd entry" do
       book.import_from_csv("entries.csv")
       entry_three = book.entries[2]
       check_entry(entry_three, "Brida", "253-333-5555", "brida@brida.com"  )
-
     end
 
     it "imports the 4nd entry" do
       book.import_from_csv("entries.csv")
       entry_four = book.entries[3]
-      check_entry(entry_four, "Aethelred", "253-222-6666", "aethelred@aethelred.com"  )
+      check_entry(entry_four, "Leofreych", "253-222-7777", "leofreych@leofreych.com"  )
     end
 
     it "imports the 5nd entry" do
       book.import_from_csv("entries.csv")
       entry_five = book.entries[4]
-      check_entry(entry_five, "Leofreych", "253-222-7777", "leofreych@leofreych.com"  )
+      check_entry(entry_five, "Ragnar", "253-333-4444", "ragnar@ragnar.com"  )
     end
   end
 
@@ -99,13 +97,6 @@ RSpec.describe AddressBook do
     end
   end
 
-  it "searches AddressBook for Uhtred" do
-    book.import_from_csv("entries.csv")
-    entry = book.binary_search("Uhtred")
-    expect(entry).to be_a Entry
-    check_entry(entry, 'Uhtred', '253.777.8888', 'UhtredofBeddanburg@northumbria.org')
-
-  end
 
   it "searches AddressBook for Ragnar" do
     book.import_from_csv("entries.csv")
@@ -148,10 +139,34 @@ RSpec.describe AddressBook do
     expect(entry).to be_nil
   end
 
-# #assignment for checkpoint
-#   it "imports the 2nd entry" do
-#         book.import_from_csv("entries.csv")
-#         check_entry(entry_two, "Bob", "555-555-5415", "bob@blocmail.com")
-#     end      
+  it "imports the 1st entry" do
+    book.import_from_csv("entries_2.csv")
+    entry_one = book.entries[0]
+    check_entry(entry_one, "Bill", "555-555-4854", "bill@blocmail.com")
+  end
+
+  it "imports the 2nd entry" do
+    book.import_from_csv("entries_2.csv")
+    entry_two = book.entries[1]
+    check_entry(entry_two, "Bob", "555-555-5415", "bob@blocmail.com")
+  end
+
+  it "imports the 3nd entry" do
+    book.import_from_csv("entries_2.csv")
+    entry_three = book.entries[2]
+    check_entry(entry_three, "Joe", "555-555-3660", "joe@blocmail.com")
+  end
+
+  it "imports the 4nd entry" do
+    book.import_from_csv("entries_2.csv")
+    entry_four = book.entries[3]
+    check_entry(entry_four, "Sally", "555-555-4646", "sally@blocmail.com")
+  end
+
+  it "imports the 5nd entry" do
+    book.import_from_csv("entries_2.csv")
+    entry_five = book.entries[4]
+    check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
+  end
 
 end

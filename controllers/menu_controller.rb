@@ -129,7 +129,7 @@ class MenuController
         puts @address_book.entries[selection]
 
       else
-        "#{selection}" is not a valid entry
+        "#{selection} not a valid entry"
         view_entry_by_number
       end
   end
@@ -204,6 +204,6 @@ class MenuController
         puts entry.to_s
         search_submenu(entry)
       end
-    end       
+    end
 
   end

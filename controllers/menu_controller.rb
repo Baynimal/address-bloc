@@ -15,6 +15,7 @@ class MenuController
     puts "4 - Import entries from a CSV"
     puts "5 - View entry by number"
     puts "6 - Exit"
+    puts "7 - Go old school and use your personal address book... your brain"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -45,6 +46,11 @@ class MenuController
       puts "Good-bye!"
 
       exit(0)
+
+    when 7
+      system "clear"
+      nuke_it
+      main_menu
 
     else
       system "clear"
@@ -205,5 +211,19 @@ class MenuController
         search_submenu(entry)
       end
     end
+
+    def nuke_it
+      puts "Would you like to wipe your entries clean: yes or no? "
+      selection = gets.chomp
+
+      if selection == "yes"
+        @address_book = []
+        puts "Address Book has been... DESTROYED!!!!"
+      else
+        system "clear"
+        main_menu
+      end
+    end
+
 
   end
